@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Suggested Destinations</title>
+</head>
+<body>
+    <h1>Suggested Destinations</h1>
+    <ul>
+        {% for destination in destinations %}
+            <li><a href="/create_itinerary">{{ destination }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+
