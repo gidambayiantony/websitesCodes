@@ -1,0 +1,24 @@
+<!-- HTML structure for quiz interface -->
+<div id="quiz-container">
+  <div id="question-container">
+    <h2 id="question-text">Question goes here</h2>
+    <!-- Render different question formats based on the question type -->
+    <!-- e.g., Multiple choice, True/False, Fill in the blanks, etc. -->
+    <div id="options-container">
+      <!-- Options for multiple-choice questions -->
+      <label><input type="radio" name="option" value="option1"> Option 1</label>
+      <label><input type="radio" name="option" value="option2"> Option 2</label>
+      <!-- Add more options based on the question type -->
+    </div>
+  </div>
+  <div id="feedback-container">
+    <!-- Show feedback to the user after submitting each question -->
+    <p id="feedback-text"></p>
+  </div>
+  <div id="timer-container">
+    <!-- Timer to keep track of quiz duration -->
+    <p id="timer-text">Time remaining: 60 seconds</p>
+  </div>
+  <button id="submit-btn">Submit Answer</button>
+</div>
+
