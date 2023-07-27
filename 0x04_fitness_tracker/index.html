@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness App</title>
+</head>
+<body>
+    <div id="app">
+        <h1>Fitness App</h1>
+        <input type="text" v-model="workout" placeholder="Enter your workout">
+        <button @click="addWorkout">Add Workout</button>
+        <ul>
+            <li v-for="(workout, index) in workouts" :key="index">{{ workout }}</li>
+        </ul>
+        <div>
+            <h2>Set Fitness Goals</h2>
+            <input type="number" v-model="goal" placeholder="Enter your goal">
+            <button @click="setGoal">Set Goal</button>
+            <p v-if="goalSet">Your fitness goal: {{ goal }}</p>
+        </div>
+        <div>
+            <h2>View Progress</h2>
+            <canvas ref="chart"></canvas>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
+
