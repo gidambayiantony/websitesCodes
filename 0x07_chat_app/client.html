@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Real-Time Chat App</title>
+</head>
+
+<body>
+    <h1>Real-Time Chat App</h1>
+    <div>
+        <h2>Private Chat</h2>
+        <input type="text" id="recipient" placeholder="Recipient user ID">
+        <input type="text" id="private_message" placeholder="Type your message">
+        <button onclick="sendPrivateMessage()">Send</button>
+    </div>
+    <div>
+        <h2>Group Chat</h2>
+        <input type="text" id="group_id" placeholder="Group ID">
+        <input type="text" id="group_message" placeholder="Type your message">
+        <button onclick="sendGroupMessage()">Send</button>
+    </div>
+    <div>
+        <h2>Online Status</h2>
+        <ul id="online_users"></ul>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.1.2/socket.io.js"></script>
+    <script>
+        const socket = io.connect('http://localhost:5000', {
+            query: {
+                user_id: 'user123' // Replace with user ID of the current user
+            }
+        });
+
+        socket.on('online_status', (data) => {
+            const onlineUsers = document.getElementById('online_users');
+            const status = data.status ? 'Online' : 'Offline';
+            const listItem = document.createElement('li');
+            listItem.innerHTML = `${data.user_id}: ${status}`;
+            onlineUsers.appendChild(listItem);
+        });
+
+        function sendPrivateMessage() {
+            const recipient = document.getElementById('recipient').value;
+            const message = document.getElementById('private_message').value;
+            socket.emit('private_message', {
+                sender: 'user123', // Replace with user ID of the current user
+                recipient: recipient,
+                message: message
+            });
+        }
+
+        function sendGroupMessage() {
+            const groupId = document.getElementById('group_id').value;
+            const message = document.getElementById('group_message').value;
+            socket.emit('group_message', {
+                sender: 'user123', // Replace with user ID of the current user
+                group_id: groupId,
+                message: message
+            });
+        }
+    </script>
+</body>
+
+</html>
+
