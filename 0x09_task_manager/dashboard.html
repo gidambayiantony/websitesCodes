@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>Welcome, {{ username }}</h1>
+    <h2>Your Tasks</h2>
+    <ul>
+        {% for task in tasks %}
+        <li>{{ task.title }} - {{ task.status }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('create_task') }}">Create New Task</a>
+</body>
+</html>
+
