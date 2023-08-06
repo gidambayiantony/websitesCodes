@@ -1,0 +1,9 @@
+/* Global styles for the entire application */
+
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  background-color: #f0f0f0;
+  color: #333;
+}
+

@@ -1,0 +1,62 @@
+/* Custom styles for the main component */
+
+/* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Header styles */
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem;
+}
+
+header h1 {
+  font-size: 2rem;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav li {
+  display: inline;
+  margin-right: 1rem;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Main content styles */
+main {
+  padding: 2rem;
+}
+
+/* Playlist section styles */
+#playlist {
+  /* Add playlist section styles here */
+}
+
+/* Song list section styles */
+#songs {
+  /* Add song list section styles here */
+}
+
+/* Music player section styles */
+#player {
+  /* Add music player section styles here */
+}
+
+/* Footer styles */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+}
+
