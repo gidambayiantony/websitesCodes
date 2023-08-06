@@ -1,0 +1,94 @@
+/* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global styles */
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+/* Header styles */
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem;
+}
+
+header h1 {
+  font-size: 2rem;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav li {
+  display: inline;
+  margin-right: 1rem;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Main content styles */
+main {
+  padding: 2rem;
+}
+
+/* Hero section styles */
+#hero {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+#hero h2 {
+  font-size: 2.5rem;
+}
+
+/* Resume templates styles */
+#templates {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.template-card {
+  flex: 0 1 calc(33.33% - 1rem);
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.template-card img {
+  max-width: 100%;
+}
+
+/* Customize section styles */
+#customize {
+  /* Add customization section styles here */
+}
+
+/* Download section styles */
+#download {
+  /* Add download section styles here */
+}
+
+/* Footer styles */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+}
+
