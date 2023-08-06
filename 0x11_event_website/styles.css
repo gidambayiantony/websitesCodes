@@ -1,0 +1,64 @@
+/* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Main styles */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem;
+}
+
+header h1 {
+  font-size: 2rem;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav li {
+  display: inline;
+  margin-right: 1rem;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+#hero {
+  /* Your hero section styles here */
+}
+
+#countdown {
+  /* Countdown timer styles here */
+}
+
+#schedule {
+  /* Schedule section styles here */
+}
+
+#speakers {
+  /* Speakers section styles here */
+}
+
+#registration {
+  /* Registration section styles here */
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+}
+
