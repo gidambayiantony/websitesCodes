@@ -1,0 +1,77 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct Node {
+    TypeTag type;
+    int value;
+    struct Node *left;
+    struct Node *right;
+} Node;
+
+typedef enum TypeTag {
+    ADD,
+    MUL,
+    SUB,
+    FIBO
+} TypeTag;
+
+Node* makeFunc(TypeTag type) {
+    Node* node = (Node*)malloc(sizeof(Node));
+    node->type = type;
+    node->left = NULL;
+    node->right = NULL;
+    return node;
+}
+
+void calc(Node* node) {
+    if (node == NULL) {
+        return;
+    }
+    
+    if (node->type == ADD) {
+        node->value = node->left->value + node->right->value;
+    } else if (node->type == MUL) {
+        node->value = node->left->value * node->right->value;
+    } else if (node->type == SUB) {
+        node->value = node->left->value - node->right->value;
+    } else if (node->type == FIBO) {
+        node->value = fibo(node->left->value);
+    }
+}
+
+int fibo(int n) {
+    int fib[n+2];
+    fib[0] = 0;
+    fib[1] = 1;
+    
+    for (int i = 2; i <= n; i++) {
+        fib[i] = fib[i-1] + fib[i-2];
+    }
+    
+    return fib[n];
+}
+
+int main() {
+    Node *add = (*makeFunc(ADD))(10, 6);
+    Node *mul = (*makeFunc(MUL))(5, 4);
+    Node *sub = (*makeFunc(SUB))(mul, add);
+    Node *fiboNode = (*makeFunc(FIBO))(2);
+    
+    calc(add);
+    calc(mul);
+    calc(sub);
+    calc(fiboNode);
+    
+    printf("add : %d\n", add->value);
+    printf("mul : %d\n", mul->value);
+    printf("sub : %d\n", sub->value);
+    printf("fibo : %d\n", fiboNode->value);
+    
+    free(add);
+    free(mul);
+    free(sub);
+    free(fiboNode);
+    
+    return 0;
+}
+
